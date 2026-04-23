@@ -3012,16 +3012,14 @@ function initMemory() {
 
         card.innerHTML = `<span>${icon}</span>`; 
         
-        // Поддержка клика и касания
-        const handleInteraction = (e) => {
-            e.preventDefault(); // Запрещаем открытие фото/меню
+        card.innerHTML = `<span>${icon}</span>`; 
+        
+        // Только один обработчик события
+        card.addEventListener('click', () => {
             flipCard(card, icon);
-        };
-card.addEventListener('click', (e) => {
-    flipCard(card, icon);
-});
+        });
 
-        grid.appendChild(card); 
+        grid.appendChild(card);
     });
     
     flipped = []; 
