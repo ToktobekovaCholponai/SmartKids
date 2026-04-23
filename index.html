@@ -1389,7 +1389,34 @@ section:last-child, .game_wrapper:last-child {
     align-items: center;
     justify-content: center;
 }
+/* 1. По умолчанию прячем смайлик */
+.memory-card span {
+    display: none;      /* Скрываем текст */
+    font-size: 2rem;    /* Делаем смайлик крупным */
+}
 
+/* 2. Когда у карточки появляется класс .flipped, показываем смайлик */
+.memory-card.flipped span, 
+.memory-card.matched span {
+    display: block;     /* Показываем текст */
+}
+
+/* 3. Добавим стили для самой карточки, чтобы она выглядела красиво на телефоне */
+.memory-card {
+    width: 60px;
+    height: 60px;
+    background-color: #ffb347; /* Оранжевый цвет закрытой карты */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.memory-card.flipped {
+    background-color: #7d5fff; /* Фиолетовый цвет открытой карты */
+}
 
     </style>
 </head>
