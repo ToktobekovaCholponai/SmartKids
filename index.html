@@ -3065,9 +3065,20 @@ function flipCard(card, icon) {
     }
 }
 function resetMemoryGame() {
-    console.log("Игра Memory перезапущена! 🧠");
-    // Здесь должен быть твой код для сброса карточек
-    // Например: initMemoryGame(); 
+    // 1. Очищаем переменные
+    flipped = [];
+    matched = 0;
+    canFlip = true;
+    
+    // 2. Если у тебя есть переменная счета, обнуляем её
+    if (typeof currentScore !== 'undefined') {
+        currentScore = 0;
+    }
+
+    // 3. Запускаем создание поля заново (это перемешает карточки)
+    initMemory(); 
+
+    console.log("Игра перезапущена! 🧠");
 }
     // ========== УНИВЕРСАЛЬНЫЙ DRAG & DROP (MOBILE + PC) ==========
 const animalsData = {
