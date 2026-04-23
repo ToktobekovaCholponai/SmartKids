@@ -3017,9 +3017,9 @@ function initMemory() {
             e.preventDefault(); // Запрещаем открытие фото/меню
             flipCard(card, icon);
         };
-
-        card.addEventListener('click', handleInteraction);
-        card.addEventListener('touchstart', handleInteraction, { passive: false });
+card.addEventListener('click', (e) => {
+    flipCard(card, icon);
+});
 
         grid.appendChild(card); 
     });
